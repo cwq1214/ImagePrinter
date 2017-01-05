@@ -22,7 +22,9 @@
                     app:text="手机未认证"
                     app:icon="@mipmap/emoji_fill"
                     app:showRightArrow="true"
-                    android:id="@+id/phoneNum" />
+                    android:id="@+id/phoneNum"
+                    app:isTextEnable="false"
+                    />
                 <com.lhcm.print.imageprinter.ui.widget.TextItemView
                     android:layout_width="match_parent"
                     android:layout_height="48dp"

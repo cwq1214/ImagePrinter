@@ -19,5 +19,7 @@
 
     <color name="enableTextColor">#000000</color>
     <color name="disableTextColor">#BBBBBB</color>
+    
+    <color name="transparent">#00000000</color>
 </resources>
 

@@ -13,10 +13,8 @@ import com.lhcm.print.imageprinter.entity.Product;
 
 public class ProductItemViewHolder extends BaseViewHolder<Product> {
 
-    protected static int layoutId= R.layout.viewholder_product_item;
-
     public ProductItemViewHolder(ViewGroup parent) {
-        super(inflateView(parent,layoutId));
+        super(inflateView(parent,R.layout.viewholder_product_item));
     }
 
     @Override

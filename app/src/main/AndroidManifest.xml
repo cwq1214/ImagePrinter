@@ -15,6 +15,10 @@
             </intent-filter>
         </activity>
 
+
+        <activity android:name=".ui.activity.AddressListActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".ui.activity.QualifyPhoneNumberActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".ui.activity.MyOrderActivity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

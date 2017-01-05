@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/layout_actionbar"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:divider="@drawable/divider_8px"
+                android:showDividers="middle|beginning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.lhcm.print.imageprinter.ui.widget.TextItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:text="手机未认证"
+                    app:icon="@mipmap/emoji_fill"
+                    app:showRightArrow="true"
+                    android:id="@+id/phoneNum" />
+                <com.lhcm.print.imageprinter.ui.widget.TextItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:text="我的订单"
+                    app:showRightArrow="true"
+                    android:id="@+id/myOrders" />
+                <com.lhcm.print.imageprinter.ui.widget.TextItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:text="地址管理"
+                    app:showRightArrow="true"
+                    android:id="@+id/address" />
+                <com.lhcm.print.imageprinter.ui.widget.TextItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:text="服务协议"
+                    app:showRightArrow="true"
+                    android:id="@+id/protocol" />
+                <com.lhcm.print.imageprinter.ui.widget.TextItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:text="清除缓存"
+                    app:showRightArrow="false"
+                    android:id="@+id/clearCache" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                >
+
+                <TextView
+                    style="@style/textBtnStyle"
+                    android:text="退出登录"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:id="@+id/logout" />
+            </LinearLayout>
+        </LinearLayout>
+</LinearLayout>

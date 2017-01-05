@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:tr_wave_height="180dp"
+        app:tr_head_height="100dp"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:background="@color/background"
+            android:id="@+id/recyclerView"
+            android:overScrollMode="never"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+    <TextView
+        android:id="@+id/centerMessage"
+        android:text="暂无数据"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

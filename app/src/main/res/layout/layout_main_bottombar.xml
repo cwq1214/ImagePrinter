@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:background="#d8d8d8"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <RadioButton
+            android:id="@+id/home"
+            android:checked="true"
+            android:paddingTop="8dp"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/sel_btn_textcolor"
+            android:drawableTop="@drawable/sel_btn_main"
+            android:text="首页"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <RadioButton
+            android:id="@+id/product"
+            android:paddingTop="8dp"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/sel_btn_textcolor"
+            android:drawableTop="@drawable/sel_btn_production"
+            android:text="我的作品"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <RadioButton
+            android:id="@+id/personal"
+            android:paddingTop="8dp"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/sel_btn_textcolor"
+            android:drawableTop="@drawable/sel_btn_personal"
+            android:text="我的"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </RadioGroup>
+</LinearLayout>

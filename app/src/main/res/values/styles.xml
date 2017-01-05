@@ -1,11 +1,59 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">#000000</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <!--输入框基本样式-->
+    <style name="inputStyle">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:textColorHint">#BBBBBB</item>
+        <item name="android:background">#FFFFFF</item>
+    </style>
+    <!--按钮基本样式-->
+    <style name="textBtnStyle">
+        <item name="android:background">@color/btnBackground</item>
+        <item name="android:textColor">@color/btnTextColor</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--tabLayout样式-->
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="android:background">#FFFFFF</item>
+        <item name="tabMinWidth">28dp</item>
+        <item name="tabIndicatorColor">?attr/colorAccent</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="tabBackground">?attr/selectableItemBackground</item>
+        <item name="tabTextAppearance">@style/MyCustomTabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/selTabTextColor</item>
+    </style>
+    <!--tabText样式-->
+    <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textColor_dis</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+
+    <declare-styleable name="TextItemView">
+        <attr name="text" format="string"></attr>
+        <attr name="icon" format="reference"></attr>
+        <attr name="showRightArrow" format="boolean"></attr>
+        <attr name="isTextEnable" format="boolean"></attr>
+    </declare-styleable>
 </resources>

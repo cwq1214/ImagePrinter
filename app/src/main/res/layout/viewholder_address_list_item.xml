@@ -34,12 +34,23 @@
         android:text="广东省广州市天河区天河路100号"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    
+
     <ImageView
+        android:src="@mipmap/trash"
         android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/delete"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+
+    <ImageView
+        android:layout_marginRight="32dp"
+        android:layout_toLeftOf="@id/delete"
         android:layout_centerVertical="true"
         android:id="@+id/edit"
         android:src="@mipmap/post"
         android:layout_width="20dp"
         android:layout_height="20dp" />
+
 </RelativeLayout>

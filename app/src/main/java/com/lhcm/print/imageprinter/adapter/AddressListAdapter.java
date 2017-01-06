@@ -17,9 +17,17 @@ public class AddressListAdapter extends RecyclerView.Adapter<BaseViewHolder<Addr
 
     List<Address> addresses;
 
+    AddressListItemViewHolder.OnDeleteAddressClickListener onDeleteAddressClickListener;
+    AddressListItemViewHolder.OnEditAddressClickListener onEditAddressClickListener;
+    AddressListItemViewHolder.OnViewHolderClickListener onViewHolderClickListener;
+
     @Override
     public BaseViewHolder<Address> onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new AddressListItemViewHolder(parent);
+        AddressListItemViewHolder holder = new AddressListItemViewHolder(parent);
+        holder.setOnDeleteAddressClickListener(onDeleteAddressClickListener);
+        holder.setOnViewHolderClickListener(onViewHolderClickListener);
+        holder.setOnEditAddressClickListener(onEditAddressClickListener);
+        return holder;
     }
 
     @Override
@@ -37,5 +45,17 @@ public class AddressListAdapter extends RecyclerView.Adapter<BaseViewHolder<Addr
 
     public void setAddresses(List<Address> addresses) {
         this.addresses = addresses;
+    }
+
+    public void setOnDeleteAddressClickListener(AddressListItemViewHolder.OnDeleteAddressClickListener onDeleteAddressClickListener) {
+        this.onDeleteAddressClickListener = onDeleteAddressClickListener;
+    }
+
+    public void setOnEditAddressClickListener(AddressListItemViewHolder.OnEditAddressClickListener onEditAddressClickListener) {
+        this.onEditAddressClickListener = onEditAddressClickListener;
+    }
+
+    public void setOnViewHolderClickListener(AddressListItemViewHolder.OnViewHolderClickListener onViewHolderClickListener) {
+        this.onViewHolderClickListener = onViewHolderClickListener;
     }
 }

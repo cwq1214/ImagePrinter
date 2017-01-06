@@ -1,6 +1,7 @@
 package com.lhcm.print.imageprinter.ui.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.widget.RadioButton;
@@ -15,9 +16,12 @@ import com.lhcm.print.imageprinter.presenter.MainPresenterImpl;
 import com.lhcm.print.imageprinter.ui.fragment.HomeFragment;
 import com.lhcm.print.imageprinter.ui.fragment.PersonalFragment;
 import com.lhcm.print.imageprinter.ui.fragment.ProductFragment;
+import com.lhcm.print.imageprinter.util.T;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 /**
  * Created by chenweiqi on 2017/1/4.
@@ -36,7 +40,9 @@ public class MainActivity extends BaseActivity<MainContract.MainPresenter> imple
     RadioGroup radioGroup;
 
 
-    MFragmentPageAdapter adapter=null;
+    MFragmentPageAdapter adapter;
+    Handler handler;
+    boolean canClose = false;
 
     @Override
     public MainContract.MainPresenter createPresenter() {
@@ -50,6 +56,8 @@ public class MainActivity extends BaseActivity<MainContract.MainPresenter> imple
 
     @Override
     public void onViewCreated() {
+        handler = new Handler();
+
         adapter = new MFragmentPageAdapter(getSupportFragmentManager());
         adapter.addFragment(new HomeFragment());
         adapter.addFragment(new ProductFragment());
@@ -69,4 +77,21 @@ public class MainActivity extends BaseActivity<MainContract.MainPresenter> imple
 
     }
 
+    @Override
+    public void onBackPressed() {
+        if (canClose){
+            super.onBackPressed();
+        }else {
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    canClose = false;
+                }
+            },2000);
+            canClose = true;
+            com.lhcm.print.imageprinter.util.T.showShort(getContext(),"在按一次退出");
+        }
+
+
+    }
 }

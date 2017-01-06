@@ -11,14 +11,17 @@ import com.lhcm.print.imageprinter.annotation.ActivityAnnotation;
 import com.lhcm.print.imageprinter.base.BaseActivity;
 import com.lhcm.print.imageprinter.contract.AddressListContract;
 import com.lhcm.print.imageprinter.entity.Address;
+import com.lhcm.print.imageprinter.helper.IntenHelper;
 import com.lhcm.print.imageprinter.itemDecoration.RecycleViewDivider;
 import com.lhcm.print.imageprinter.presenter.AddressListPresenterImpl;
+import com.lhcm.print.imageprinter.ui.viewholder.AddressListItemViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by chenweiqi on 2017/1/5.
@@ -46,6 +49,15 @@ public class AddressListActivity extends BaseActivity<AddressListContract.Addres
     public void onViewCreated() {
         adapter = new AddressListAdapter();
 
+        adapter.setOnEditAddressClickListener(new AddressListItemViewHolder.OnEditAddressClickListener() {
+            @Override
+            public void onClick(Address address, int position) {
+                IntenHelper.openEditAddressActivity(getContext(),address);
+            }
+        });
+        //TODO 删除 选择地址
+
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new RecycleViewDivider(getContext(),LinearLayoutManager.VERTICAL,1,getResources().getColor(R.color.dividerColor)));
@@ -58,5 +70,10 @@ public class AddressListActivity extends BaseActivity<AddressListContract.Addres
         adapter.setAddresses(addresses);
     }
 
+
+    @OnClick(R.id.addAddress)
+    public void onAddressClick(){
+        IntenHelper.openAddAddressActivity(getContext());
+    }
 
 }

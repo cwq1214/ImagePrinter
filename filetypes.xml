@@ -5,6 +5,7 @@
       <mapping pattern="img" type="PLAIN_TEXT" />
       <mapping pattern="encord" type="PLAIN_TEXT" />
       <mapping pattern="text" type="PLAIN_TEXT" />
+      <mapping ext="aar" type="PLAIN_TEXT" />
       <mapping ext="tx" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
